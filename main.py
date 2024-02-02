@@ -15,7 +15,7 @@ def get_html(url):
 def get_total_page(html):
     soup = bs(html, 'lxml')
     page_ul = soup.find('div', class_='pager-wrap').find('ul')
-    last_page = page_ul.find_all('li')[-2]
+    last_page = page_ul.find_all('li')[-1]
     total_page = last_page.find('a').get('href').split('=')[-1]
     return int(total_page)
 
